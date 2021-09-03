@@ -23,8 +23,8 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
-    publicPath: '/'
+    // path: path.resolve(__dirname, 'build'),
+    publicPath: 'http://localhost:3001/'
   },
 
   resolve: {
@@ -90,8 +90,9 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'remote',
+      name: 'app1',
       filename: 'remoteEntry.js',
+      remotes: {},
       exposes: {
         './Header': './src/Header'
       },
